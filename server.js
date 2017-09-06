@@ -25,7 +25,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("build"));
 
-mongoose.connect("mongodb://localhost/nyt-Articles");
+mongoose.connect("mongodb://heroku_9w9rd9x2:jt862dvl1pv5fndl1vgomkjch6@ds127034.mlab.com:27034/heroku_9w9rd9x2");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
