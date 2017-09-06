@@ -4,7 +4,14 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser")
 
+//Require Models
+var Article = require("./models/article")
+var Note = require("./models/note")
+
+
 var app = express();
+
+app.use(express.static("build"));
 
 var PORT = process.env.PORT || 3001;
 
@@ -30,10 +37,12 @@ db.once("open", function() {
 });
 
 // Starting our express server
+require("./controller/api-routes")(app)
+
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/build/static/index.html");
 });

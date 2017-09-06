@@ -1,0 +1,23 @@
+body {
+  background-color: #f0edee;
+}
+
+.navbar{
+  background-color: #d12525;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+}
+
+
+.container-fluid{
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-brand{
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #F0EDEE;
+}
