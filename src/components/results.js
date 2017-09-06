@@ -1,6 +1,7 @@
 import React from 'react'
-import { Panel, Button} from 'react-bootstrap';
+import { Panel, Button, Row, Col} from 'react-bootstrap';
 import axios from "axios"
+import style from './css/searchcss.css'
 
 
 class Results extends React.Component{
@@ -39,10 +40,16 @@ class Results extends React.Component{
 
   render(){
     return(
-      <Panel>
-        <a href={this.state.link}>{this.state.title}</a>
-        <Button type="submit" onClick = {this.handleSave}> Save</Button>
-      </Panel>
+
+        <Row>
+          <Col xs={10}>
+            <a href={this.state.link}>{this.state.title}</a>
+        </Col>
+        <Col xs={2}>
+          <Button type="submit" onClick = {this.handleSave}> Save</Button>
+        </Col>
+      </Row>
+
     )
   }
 }

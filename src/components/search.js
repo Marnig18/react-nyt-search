@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
-import {Grid, PageHeader, Row, Col, Panel, FormGroup, FormControl, ControlLabel, Button, ListGroup, ListGroupItem} from 'react-bootstrap'
+import {Grid, PageHeader, Row, Col, Panel, FormGroup, FormControl, ControlLabel, Button, ListGroup, Form, ListGroupItem} from 'react-bootstrap'
 import axios from 'axios'
 import ResultsList from './resultslist'
+import style from "./css/searchcss.css"
 
 
 class Search extends React.Component{
@@ -51,12 +52,18 @@ class Search extends React.Component{
       <h3>Article Search</h3>
     );
 
+    const header=(
+      <h3>Results</h3>
+    )
+
     const articles = this.props.articles
 
 
 
     return(
       <Grid>
+        <Row>
+          <Col xs={6}>
          <Panel header={title}>
            <form>
              <FormGroup controlId="topic">
@@ -68,7 +75,9 @@ class Search extends React.Component{
                  onChange={this.handleChange}
                />
              </FormGroup>
-             <FormGroup controlId="startDate">
+             <Row>
+               <Col xs={6}>
+             <FormGroup controlId="startDate" inline>
                <ControlLabel>Start Date</ControlLabel>
                <FormControl
                  type="date"
@@ -76,7 +85,9 @@ class Search extends React.Component{
                  onChange={this.handleChange}
                />
              </FormGroup>
-             <FormGroup controlId="endDate">
+           </Col>
+           <Col xs={6}>
+             <FormGroup controlId="endDate" inline>
                <ControlLabel>End Date</ControlLabel>
                <FormControl
                  type="date"
@@ -84,13 +95,25 @@ class Search extends React.Component{
                  onChange={this.handleChange}
                />
              </FormGroup>
-             <Button type="submit" onClick={this.handleSubmit}>
-               Search
-             </Button>
+           </Col>
+         </Row>
+
+            <Row>
+              <Col xs={4}></Col>
+              <Col xs={4}>
+               <Button type="submit" block onClick={this.handleSubmit}>
+                 Search
+               </Button>
+             </Col>
+             <Col xs={4}></Col>
+           </Row>
            </form>
          </Panel>
+       </Col>
+
+          <Col xs={6}>
           {articles.length > 0 ?(
-         <Panel header="Results">
+         <Panel header={header}>
            <ResultsList saveArticle={this.props.saveArticle} articles={this.props.articles} />
          </Panel>
        ) : (
@@ -99,7 +122,9 @@ class Search extends React.Component{
          </Panel>
        )
        }
-      </Grid>
+     </Col>
+   </Row>
+</Grid>
     )
   }
 }

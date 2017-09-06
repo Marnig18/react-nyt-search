@@ -1,0 +1,39 @@
+.page-header{
+  border: none
+}
+
+.panel{
+  border-color: #d12525;
+  border-width: medium;
+}
+
+.panel-default>.panel-heading{
+  background-image: none;
+  background-color: #d12525;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+
+}
+
+.panel-title{
+  font-size: 2em
+}
+
+.btn-default{
+  margin-top: 20px;
+}
+
+.list-group{
+    shadow: none;
+    box-shadow: none;
+}
+
+.list-group-item{
+  border: none;
+
+}
+
+a{
+  color: #000
+}

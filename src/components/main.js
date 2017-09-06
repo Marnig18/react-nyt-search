@@ -5,7 +5,7 @@ import axios from 'axios'
 import Search from './search'
 import Saved from './saved'
 import {LinkContainer} from 'react-router-bootstrap'
-import style from "./style.css"
+import style from "./css/style.css"
 
 class Main extends React.Component{
   constructor(){
@@ -59,22 +59,26 @@ class Main extends React.Component{
 
       return(
       <Grid fluid>
-        <Navbar fluid="true">
-          <Navbar.Header className="navbar">
-            <Navbar.Brand className="brandName">
-              <a href="#">NYT Article Search</a>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav pullRight>
-              <LinkContainer exact to="/"><NavItem >Home</NavItem></LinkContainer>
-              <LinkContainer exact to="/saved"><NavItem eventKey={2} >Saved</NavItem></LinkContainer>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Row>
+          <Col xs={12}>
+            <Navbar >
+              <Navbar.Header className="navbar">
+                <Navbar.Brand bsClass="brandName">
+                  <a href="#" bsClass="title">NYT Article Search</a>
+                </Navbar.Brand>
+                <Navbar.Toggle />
+              </Navbar.Header>
+              <Navbar.Collapse>
+                <Nav  bsStyle="pills" activeKey={1} pullRight >
+                  <LinkContainer className="navBtns" exact to="/"><NavItem >Home</NavItem></LinkContainer>
+                  <LinkContainer exact className="navBtns" to="/saved"><NavItem eventKey={2} >Saved</NavItem></LinkContainer>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+          </Col>
+        </Row>
         <Row bsClass="row">
-          <Col bsClass="col" xs={12} >
+          <Col bsClass="col" xs={12} fluid >
             <PageHeader>New York Times Article Search <small>Search and annotate articles of interest!</small></PageHeader>
         </Col>
       </Row>
