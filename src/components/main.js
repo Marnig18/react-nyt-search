@@ -5,7 +5,7 @@ import axios from 'axios'
 import Search from './search'
 import Saved from './saved'
 import {LinkContainer} from 'react-router-bootstrap'
-import style from "./css/style.css"
+import style from "../css/style.css"
 
 class Main extends React.Component{
   constructor(){

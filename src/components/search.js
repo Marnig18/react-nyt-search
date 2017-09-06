@@ -3,7 +3,7 @@ import { Route, Link, Switch } from 'react-router-dom'
 import {Grid, PageHeader, Row, Col, Panel, FormGroup, FormControl, ControlLabel, Button, ListGroup, Form, ListGroupItem} from 'react-bootstrap'
 import axios from 'axios'
 import ResultsList from './resultslist'
-import style from "./css/searchcss.css"
+import style from "../css/searchcss.css"
 
 
 class Search extends React.Component{

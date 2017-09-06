@@ -1,7 +1,7 @@
 import React from 'react'
 import { Panel, Button, Row, Col} from 'react-bootstrap';
 import axios from "axios"
-import style from './css/searchcss.css'
+import style from '../css/searchcss.css'
 
 
 class Results extends React.Component{
