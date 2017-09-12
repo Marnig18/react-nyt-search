@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
-import {Grid, PageHeader, Row, Col, Navbar, NavItem, Nav} from 'react-bootstrap'
+import {Grid, PageHeader, Row, Col, Navbar, NavItem, Nav,Button, Image} from 'react-bootstrap'
 import axios from 'axios'
 import Search from './search'
 import Saved from './saved'
 import {LinkContainer} from 'react-router-bootstrap'
 import style from "../css/style.css"
+import image from "../css/NYT-api-logo.png"
 
 class Main extends React.Component{
   constructor(){
@@ -39,11 +40,12 @@ class Main extends React.Component{
         })
       }
 
-      saveArticle(title, link, date){
+      saveArticle(title, link, image, date){
         axios.
           post('./api', {
             title: title,
             link: link,
+            image: image,
             date: date
           }).then(response=>{
             console.log(response)
@@ -57,43 +59,57 @@ class Main extends React.Component{
 
     render(){
 
+      const footer = (
+      <Grid fluid bsClass="footer">
+        <Row >
+          <Col xs={4}  responsive>
+            <Image src={image} bsClass='image'/>
+          </Col>
+          <Col xs={4}><p bsClass="created">Created By Marni Gross</p></Col>
+          <Col xs={4}><a  bsClass="github" href="https://github.com/Marnig18/react-nyt-search"><p>Github</p></a></Col>
+        </Row>
+      </Grid>
+      )
+
       return(
       <Grid fluid>
         <Row>
           <Col xs={12}>
             <Navbar >
               <Navbar.Header className="navbar">
-                <Navbar.Brand bsClass="brandName">
+                <Navbar.Brand bsClass="brandName center-align">
                   <a href="#" bsClass="title">NYT Article Search</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
               </Navbar.Header>
               <Navbar.Collapse>
-                <Nav  bsStyle="pills" activeKey={1} pullRight >
-                  <LinkContainer className="navBtns" exact to="/"><NavItem >Home</NavItem></LinkContainer>
-                  <LinkContainer exact className="navBtns" to="/saved"><NavItem eventKey={2} >Saved</NavItem></LinkContainer>
+                <Nav  bsStyle="pills" activeKey={1} pullRight bsClass="navButtons">
+                  <LinkContainer  exact to="/"><NavItem bsClass="navItem" eventKey={1}>Home</NavItem></LinkContainer>
+                  <LinkContainer exact to="/saved"><NavItem eventKey={2} bsClass="navItem" >Saved</NavItem></LinkContainer>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
           </Col>
         </Row>
         <Row bsClass="row">
-          <Col bsClass="col" xs={12} fluid >
+          <Col xs={2}></Col>
+          <Col bsClass="col" xs={8} fluid >
             <PageHeader>New York Times Article Search <small>Search and annotate articles of interest!</small></PageHeader>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
-          <div>
-            <Switch>
-              <Route exact path= "/" render={(props)=><Search makeRequest={this.makeRequest} articles = {this.state.articles} saveArticle ={this.saveArticle}/>} />
-              <Route exact path = "/saved" component={Saved} />
-            </Switch>
-          </div>
-        </Col>
-      </Row>
-    </Grid>
-
+          </Col>
+          <Col xs={2}></Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <div className="articlesDiv">
+              <Switch>
+                <Route exact path= "/" render={(props)=><Search makeRequest={this.makeRequest} articles = {this.state.articles} saveArticle ={this.saveArticle}/>} />
+                <Route exact path = "/saved" component={Saved} />
+              </Switch>
+            </div>
+          </Col>
+        </Row>
+        {footer}
+      </Grid>
 
       )
     }

@@ -1,18 +1,83 @@
 body {
-  background-color: #fff;
+  background-color: #FFFDF4;
 }
 
-.navbar{
-  background-color: #d12525;
-  background-image: none;
-  border: none;
-  border-radius: 0;
-}
-
+/*.articlesDiv{
+  background-color: #4ECDC4;
+}*/
 
 .container-fluid{
   padding: 0;
   margin: 0;
+}
+
+.pills{
+
+  list-style: none;
+  padding:20px;
+  margin: 10px;
+}
+
+.navButtons{
+  list-style: none;
+
+  padding: 35px;
+  background-color: #D64933;
+
+
+}
+
+.navButtons li{
+  border: none;
+  box-shadow: none;
+  padding-right: 2px;
+  font-size: 15px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.navbar-default .navbar-nav>.active>a{
+  color: #fff;
+  background-color: #E6E1C5;
+  background-image: none;
+}
+
+
+a:hover{
+  text-decoration: none;
+}
+
+
+
+.navbar-default .navbar-nav>li>a{
+  color: #fff;
+  text-shadow: none;
+}
+
+.navButtons li a{
+  padding: 37px;
+  color: #fff;
+
+}
+
+
+
+.buttons{
+  padding: 35px;
+  background-color: #D64933;
+  border: none;
+  border-right: solid 1px #7C7C7C;
+  box-shadow: none;
+
+}
+
+
+
+.navbar{
+  background-color: #D64933;
+  background-image: none;
+  border: none;
+  border-radius: 0;
 }
 
 .navbar-default .navbar-brand {
@@ -23,11 +88,42 @@ body {
   margin-top: 20px;
 }
 
+.page-header{
+  padding: 40px;
+}
+
 h1{
   margin-left: 75px;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  margin:0;
 }
 
 small{
   display: block;
-  margin-top: 2px;
+  margin-top: 5px;
+}
+
+.footer-fluid{
+  background-color: #D64933;
+
+}
+
+img{
+width: 50%
+}
+
+p{
+
+  text-align: center;
+  margin-top: 10px;
+}
+
+.col-xs-4 a{
+  text-decoration: none;
+  color: #fff
+}
+
+.col-xs-4 a:hover{
+  color: #000
 }

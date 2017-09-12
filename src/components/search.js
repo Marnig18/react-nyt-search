@@ -63,55 +63,67 @@ class Search extends React.Component{
     return(
       <Grid>
         <Row>
-          <Col xs={6}>
-         <Panel header={title}>
-           <form>
-             <FormGroup controlId="topic">
-               <ControlLabel>Topic</ControlLabel>
-               <FormControl
-                 type="text"
-                 value={this.state.topic}
-                 placeholder="Enter Topic"
-                 onChange={this.handleChange}
-               />
-             </FormGroup>
-             <Row>
-               <Col xs={6}>
-             <FormGroup controlId="startDate" inline>
-               <ControlLabel>Start Date</ControlLabel>
-               <FormControl
-                 type="date"
-                 value={this.state.startDate}
-                 onChange={this.handleChange}
-               />
-             </FormGroup>
-           </Col>
-           <Col xs={6}>
-             <FormGroup controlId="endDate" inline>
-               <ControlLabel>End Date</ControlLabel>
-               <FormControl
-                 type="date"
-                 value={this.state.endDate}
-                 onChange={this.handleChange}
-               />
-             </FormGroup>
-           </Col>
-         </Row>
+          <Col xs={2}></Col>
+          <Col xs={8}>
+           <Panel header={title}>
+             <form>
+               <Row>
+                 <Col xs={1}></Col>
+                 <Col xs={10}>
+                   <FormGroup controlId="topic">
+                     <ControlLabel>Topic</ControlLabel>
+                     <FormControl
+                       type="text"
+                       value={this.state.topic}
+                       placeholder="Enter Topic"
+                       onChange={this.handleChange}
+                     />
+                   </FormGroup>
+                 </Col>
+                 <Col xs={1}></Col>
+               </Row>
+               <Row>
+                 <Col xs={1}></Col>
+                 <Col xs={5}>
+                   <FormGroup controlId="startDate" inline>
+                     <ControlLabel>Start Date</ControlLabel>
+                     <FormControl
+                       type="date"
+                       value={this.state.startDate}
+                       onChange={this.handleChange}
+                     />
+                   </FormGroup>
+                 </Col>
+                 <Col xs={5}>
+                   <FormGroup controlId="endDate" inline>
+                     <ControlLabel>End Date</ControlLabel>
+                     <FormControl
+                       type="date"
+                       value={this.state.endDate}
+                       onChange={this.handleChange}
+                     />
+                   </FormGroup>
+                 </Col>
+                 <Col xs={1}></Col>
+               </Row>
 
-            <Row>
-              <Col xs={4}></Col>
-              <Col xs={4}>
-               <Button type="submit" block onClick={this.handleSubmit}>
-                 Search
-               </Button>
-             </Col>
-             <Col xs={4}></Col>
-           </Row>
-           </form>
-         </Panel>
+              <Row>
+                <Col xs={5}></Col>
+                <Col xs={2}>
+                 <Button type="submit" block onClick={this.handleSubmit}>
+                   Search
+                 </Button>
+               </Col>
+               <Col xs={5}></Col>
+             </Row>
+             </form>
+           </Panel>
        </Col>
-
-          <Col xs={6}>
+       <Col xs={2}></Col>
+     </Row>
+   <Row>
+      <Col xs={1}></Col>
+      <Col xs={10}>
           {articles.length > 0 ?(
          <Panel header={header}>
            <ResultsList saveArticle={this.props.saveArticle} articles={this.props.articles} />
@@ -123,6 +135,7 @@ class Search extends React.Component{
        )
        }
      </Col>
+     <Col xs={1}></Col>
    </Row>
 </Grid>
     )

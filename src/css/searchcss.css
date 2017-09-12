@@ -3,37 +3,109 @@
 }
 
 .panel{
-  border-color: #d12525;
-  border-width: medium;
+  /*border-color: #D64933;
+  border-width: medium;*/
+  border: none;
+  background-color: #7C7C7C;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 60px
+
 }
+
+
 
 .panel-default>.panel-heading{
   background-image: none;
-  background-color: #d12525;
+  margin-bottom: 0;
+  background-color: #7C7C7C;
   text-align: center;
-  color: #fff;
-  padding: 20px;
+  color: #FFFDF4;
+  border:none;
+  padding-top: 40px;
+  font-family: 'Merriweather', serif;
 
+
+  /*padding: 20px;*/
+
+}
+
+.form-control{
+  border: none;
+  background-color:#7C7C7C;
+  box-shadow: none;
+  border-bottom: solid 1px #000000;
+  border-radius: 0;
+  margin-bottom: 25px;
+  font-family: 'Merriweather', serif;
+  color: #555;
+
+}
+
+
+.form-control:focus{
+  border-color: #000000;
+  box-shadow: none;
+}
+
+.control-label{
+  font-family: 'Merriweather', serif;
 }
 
 .panel-title{
   font-size: 2em
 }
 
-.btn-default{
-  margin-top: 20px;
+.saveBtn{
+  margin-top: 30px;
+  box-shadow: none;
+  border: none;
+  background-color: #E6E1C5;
+  background-image: none;
+  text-shadow: none;
+  color: #000;
+  font-family: 'Merriweather', serif;
+  margin-top: 45px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.list-group{
+.saveBtn:hover{
+  background-color: #7C7C7C;
+  border: none;
+}
+
+.resultspanel{
     shadow: none;
     box-shadow: none;
-}
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+  }
 
-.list-group-item{
+.resultslistitems {
   border: none;
-
+  background-color: #D2CCA1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+  border-radius: 0;
+  padding: 10px;
 }
 
-a{
-  color: #000
+.resultslistsitems:first-child{
+  border-radius: 0;
+}
+
+.resultslistsitems:last-child{
+  border-radius: 0;
+}
+
+/*.img-responsive{
+  width: 90%
+}*/
+
+.articleTitle {
+  color: #000;
+  font-family: 'Merriweather', serif;
+  position: absolute;
+  top: 50px;
 }

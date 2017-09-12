@@ -1,0 +1,38 @@
+
+
+
+
+.savedList{
+  box-shadow: none;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.savedArticleItems{
+  border: none;
+  background-color: #D2CCA1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+  border-radius: 0;
+  padding: 10px;
+
+}
+
+.articleName{
+  color: #fff;
+  font-size: 1.3em;
+
+}
+
+
+
+img{
+  width: 200%;
+  vertical-align: right;
+
+}
+
+.notesBtn{
+  margin-top: 0;
+}
